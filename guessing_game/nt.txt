@@ -1,0 +1,57 @@
+To obtain user input and then print the result as output, we need to bring the io input/output library into scope.
+The io library comes from the standard library, known as std: " use std::io; "
+
+let - assigns variable
+
+let apples = 5; // immutable / cant be changed
+let mut bananas = 5; // mutable
+
+The :: syntax in the ::new line indicates that new is an associated function of the String type.
+ An associated function is a function that’s implemented on a type, in this case String. 
+ This new function creates a new, empty string.
+
+The & indicates that this argument is a reference,  which gives you a way to let multiple parts of your code access one piece of data
+ without needing to copy that data into memory multiple times. 
+
+For now, all you need to know is that, like variables, references are immutable by default.
+ Hence, you need to write &mut guess rather than &guess to make it mutable.
+
+p2
+
+The secret number should be different every time so the game is fun to play more than once. We’ll use a random number between 1 and 100 so the game isn’t too difficult.
+ Rust doesn’t yet include random number functionality in its standard library. 
+ However, the Rust team does provide a rand crate with said functionality.
+
+The rand crate is a library crate, which contains code that is intended to be used in other programs and can’t be executed on its own.
+
+Before we can write code that uses rand, we need to modify the Cargo.toml file to include the rand crate as a dependency. Open that file now and add the following line to the bottom, beneath the [dependencies] section header that Cargo created for you. Be sure to specify rand exactly as we have here, with this version number, or the code examples in this tutorial may not work:
+
+[dependencies]
+rand = "0.8.5"
+
+In [dependencies] you tell Cargo which external crates your project depends on and which versions of those crates you require.
+ In this case, we specify the rand crate with the semantic version specifier 0.8.5. 
+
+Cargo considers these versions to have public APIs compatible with version 0.8.5, 
+and this specification ensures you’ll get the latest patch release that will still compile with the code in this chapter.
+Any version 0.9.0 or greater is not guaranteed to have the same API as what the following examples use.
+
+run $ cargo build after adding the rand crate as a dependency
+
+Cargo also grabbed other crates that rand depends on to work. 
+After downloading the crates, Rust compiles them and then compiles the project with the dependencies available.
+
+When you build a project for the first time, Cargo figures out all the versions of the dependencies
+ that fit the criteria and then writes them to the Cargo.lock file.
+
+Cargo makes it very easy to reuse libraries, 
+ so Rustaceans are able to write smaller projects that are assembled from a number of packages.
+
+The Ordering type is another enum and has the variants Less, Greater, and Equal. 
+ These are the three outcomes that are possible when you compare two values.
+
+break; - breaks loop 
+
+This project was a hands-on way to introduce you to many new Rust concepts: let, match, functions, the use of external crates, and more.
+ In the next few chapters, you’ll learn about these concepts in more detail.
+

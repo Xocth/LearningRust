@@ -1,7 +1,0 @@
-To obtain user input and then print the result as output, we need to bring the io input/output library into scope.
-The io library comes from the standard library, known as std: " use std::io; "
-
-let - assigns variable
-
-let apples = 5; // immutable / cant be changed
-let mut bananas = 5; // mutable
