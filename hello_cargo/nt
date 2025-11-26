@@ -1,0 +1,35 @@
+pg 16
+
+As you write more complex Rust programs, you’ll add
+dependencies, and if you start a project using Cargo, adding dependencies will be much
+easier to do.
+
+$cargo new hello_cargo
+
+This file is in the TOML (Tom’s Obvious, Minimal Language) format, which is Cargo’s
+configuration format.
+
+If you started a project that doesn’t use Cargo, as we did with the “Hello, world!” project, you
+can convert it to a project that does use Cargo. Move the project code into the src directory
+and create an appropriate Cargo.toml file.
+
+From your hello_cargo directory, build your project by entering the following
+command: $ cargo build
+
+
+We just built a project with cargo build and ran it with ./target/debug/hello_cargo , but
+we can also use cargo run to compile the code and then run the resultant executable all in
+one command: $ cargo run
+
+Cargo also provides a command called cargo check . This command quickly checks your
+code to make sure it compiles but doesn’t produce an executable.
+
+Let’s recap what we’ve learned so far about Cargo:
+• We can create a project using cargo new .
+• We can build a project using cargo build .
+• We can build and run a project in one step using cargo run .
+• We can build a project without producing a binary to check for errors using cargo check .
+• Instead of saving the result of the build in the same directory as our code, Cargo stores
+it in the target/debug directory.
+
+onto chp2
